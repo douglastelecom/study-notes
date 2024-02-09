@@ -77,7 +77,90 @@ state('closed', style({
 ```
 #### TRANSIÇÃO
 
-Você pode mudar os estados dos componentes de forma abrupta. Isso geralmente não é recomendado, pois vai deixa as animações feias e sem sentido. Para transicionar as animações, use a função transition.
+Você pode mudar os estados dos componentes de forma abrupta. Isso geralmente não é recomendado, pois vai deixa as animações feias e sem sentido. Para transicionar as animações, use a função `transition`.
+
+Em conjunto com o transition, você pode utilizar a função `animation()` para definir o tempo, delay e a aceleração da animação.
+
+```ts
+animate ('duration delay easing')
+```
+ou apenas
+```ts
+animate ('duration')
+```
+Dessa forma, utilizando a função transition ficamos com:
+```ts
+transition('open => closed', [
+  animate('1s')
+]),
+```
+
+#### TRIGGERING
+
+Para criar uma animação é necessário a função `trigger()`. Ela será responsável por agrupar todas os estados, transições e animações e dar um nome. Veja o exemplo abaixo:
+
+```ts
+@Component({
+  standalone: true,
+  selector: 'app-open-close',
+  animations: [
+    trigger('openClose', [
+      // ...
+      state('open', style({
+        height: '200px',
+        opacity: 1,
+        backgroundColor: 'yellow'
+      })),
+      state('closed', style({
+        height: '100px',
+        opacity: 0.8,
+        backgroundColor: 'blue'
+      })),
+      transition('open => closed', [
+        animate('1s')
+      ]),
+      transition('closed => open', [
+        animate('0.5s')
+      ]),
+    ]),
+  ],
+  templateUrl: 'open-close.component.html',
+  styleUrls: ['open-close.component.css']
+})
+export class OpenCloseComponent {
+  isOpen = true;
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+
+}
+```
+
+Devemos então associar o nosso trigger openClose à um elemento específico. Podemos fazer isso da seguinte forma:
+
+```html
+<div [@triggerName]="expression">…</div>;
+```
+
+Assim, sempre que a variável `expression` muda de valor (estado), a animação acontece. Veja um exemplo real:
+
+```html
+<nav>
+  <button type="button" (click)="toggle()">Toggle Open/Close</button>
+</nav>
+
+<div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+  <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+</div>
+```
+A função `toggle()` muda o valor de `isOpen`, atribuindo um estado `open` ou `close` à `@openClose`.
+
+```ts
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+```
 
 
 
