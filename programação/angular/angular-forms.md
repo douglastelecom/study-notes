@@ -92,8 +92,9 @@ Para tornar a construção de formulários menos repetitiva, e sem precisar inst
 Ele possui três apenas serviço: `control()` `group()` e `array()`.
 
 Como o FormBuilder é um serviço, é necessário importá-lo no construtor para ser injetado:
-
+```ts
 constructor(private formBuilder: FormBuilder) {}
+```
 
 Depois é possível construir um formGroup da seguinte forma:
 
