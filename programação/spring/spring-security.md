@@ -330,7 +330,7 @@ public class SecurityConfiguration {
 Repare que foram adicionados três métodos a essa classe (observe a anotação @Bean), são eles:
 1. `securityFilterChain()`: bean de configuração principal de segurança do Spring Security. Ele quem define a política de autorizações para cada endpoint da API.
 2. `authenticationManager()`: bean utilizado para realizar a autenticação de um usuário.
-3. `passwordEncoder()``: bean utilizado pelo Spring Security para codificar as senhas dos usuários de forma segura, protegendo as informações confidenciais. No exemplo estamos usando o algoritmo bcrypt para codificar essas senhas.
+3. `passwordEncoder()`: bean utilizado pelo Spring Security para codificar as senhas dos usuários de forma segura, protegendo as informações confidenciais. No exemplo estamos usando o algoritmo bcrypt para codificar essas senhas.
 
 #### PREPARANDO A ESTRUTURA PARA TESTES
 
