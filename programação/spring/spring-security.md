@@ -66,6 +66,23 @@ public class User {
 ```
 
 E por fim basta criar o repositório do usuário
+
+```java
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+
+   Optional<User> findByEmail(String email);
+}
+```
+
+#### IMPLEMENTANDO AS INTERFACES USERDETAILS
+
+Para configurar a autenticação do usuário é importante definir como os detalhes do usuário serão obtidos e validados. Para isso, o Spring Security fornece duas interfaces importantes: UserDetails e UserDetailsService. 
+
+O UserDetails é uma interface que representa os detalhes do usuário, como seu nome de usuário, senha e autorizações. Já o UserDetailsService é uma interface que retorna um UserDetails com base no nome do usuário fornecido.
+
+Criação da classe `UserDetailsImpl` que implementa a interface `UserDetails`:
+
 ```java
 @Getter
 public class UserDetailsImpl implements UserDetails {
@@ -143,6 +160,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 #### CONFIGURANDO A CRIAÇÃO E VALIDAÇÃO DO TOKEN JWT
 
 A biblioteca escolhida para implementar o token JWT é a Auth0.
+
 Vamos agora criar uma classe de serviço chamada JwtTokenService. Ela será responsável por gerar novos tokens e recuperar usuários via token.
 
 ```java
@@ -377,38 +395,51 @@ public class UserController {
 E, por fim, o service:
 
 ```java
-@RestController
-@RequestMapping("/users")
-public class UserController {
+@Service
+public class UserService {
 
     @Autowired
-    private UserService userService;
+    private AuthenticationManager authenticationManager;
 
-    @PostMapping("/login")
-    public ResponseEntity<RecoveryJwtTokenDto> authenticateUser(@RequestBody LoginUserDto loginUserDto) {
-        RecoveryJwtTokenDto token = userService.authenticateUser(loginUserDto);
-        return new ResponseEntity<>(token, HttpStatus.OK);
+    @Autowired
+    private JwtTokenService jwtTokenService;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private SecurityConfiguration securityConfiguration;
+
+    // Método responsável por autenticar um usuário e retornar um token JWT
+    public RecoveryJwtTokenDto authenticateUser(LoginUserDto loginUserDto) {
+        // Cria um objeto de autenticação com o email e a senha do usuário
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
+                new UsernamePasswordAuthenticationToken(loginUserDto.email(), loginUserDto.password());
+
+        // Autentica o usuário com as credenciais fornecidas
+        Authentication authentication = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
+
+        // Obtém o objeto UserDetails do usuário autenticado
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+
+        // Gera um token JWT para o usuário autenticado
+        return new RecoveryJwtTokenDto(jwtTokenService.generateToken(userDetails));
     }
 
-    @PostMapping
-    public ResponseEntity<Void> createUser(@RequestBody CreateUserDto createUserDto) {
-        userService.createUser(createUserDto);
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
+    // Método responsável por criar um usuário
+    public void createUser(CreateUserDto createUserDto) {
 
-    @GetMapping("/test")
-    public ResponseEntity<String> getAuthenticationTest() {
-        return new ResponseEntity<>("Autenticado com sucesso", HttpStatus.OK);
-    }
+        // Cria um novo usuário com os dados fornecidos
+        User newUser = User.builder()
+                .email(createUserDto.email())
+                // Codifica a senha do usuário com o algoritmo bcrypt
+                .password(securityConfiguration.passwordEncoder().encode(createUserDto.password()))
+                // Atribui ao usuário uma permissão específica
+                .roles(List.of(Role.builder().name(createUserDto.role()).build()))
+                .build();
 
-    @GetMapping("/test/customer")
-    public ResponseEntity<String> getCustomerAuthenticationTest() {
-        return new ResponseEntity<>("Cliente autenticado com sucesso", HttpStatus.OK);
-    }
-
-    @GetMapping("/test/administrator")
-    public ResponseEntity<String> getAdminAuthenticationTest() {
-        return new ResponseEntity<>("Administrador autenticado com sucesso", HttpStatus.OK);
+        // Salva o novo usuário no banco de dados
+        userRepository.save(newUser);
     }
 }
 ```
