@@ -154,7 +154,7 @@ Assim, sempre que a variável `expression` muda de valor (estado), a animação 
   <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
 </div>
 ```
-A função `toggle()` muda o valor de `isOpen`, atribuindo um estado `open` ou `close` à `@openClose`.
+A função `toggle()` muda o valor de `isOpen`, atribuindo um estado `open` ou `close` a `@openClose`.
 
 ```ts
   toggle() {
