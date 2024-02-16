@@ -17,6 +17,7 @@ Quando a div pai é display-flex, as divs filhas não possuem largura máxima au
 </div>
 ```
 Veja:
+
 ![display-flex](/assets/images/css/display-flex/1.png)
 
 Ao contrário, se a direção for mudada para em coluna `flex-direction: column`, as divs terão largura máxima e altura mínima.
@@ -30,6 +31,7 @@ Ao contrário, se a direção for mudada para em coluna `flex-direction: column`
 </div>
 ```
 Veja:
+
 ![display-flex](/assets/images/css/display-flex/2.png)
 
 #### MARGIN
@@ -37,6 +39,7 @@ Veja:
 Considere a div flex abaixo com dois elementos de largura 50%:
 
 Veja:
+
 ![display-flex](/assets/images/css/display-flex/3.png)
 
 Se uma margem direita de 20% for acrescentada ao elemento da esquerda (o quadrado vermelho), perceba que o tamanho dos elementos diminuirá. Isso acontece porque as divs já estão ocupando todo o espaço (cada uma com 50%) então a margem precisa comprimílos para respeitar os 20% estabelecidos. Dessa forma, na prática, as divs terão na prática apenas metade de 80%, ficando cada uma com 40% de width (na prática).
@@ -50,6 +53,7 @@ Se uma margem direita de 20% for acrescentada ao elemento da esquerda (o quadrad
 </div>
 ```
 Veja:
+
 ![display-flex](/assets/images/css/display-flex/4.png)
 
 #### PADDING
@@ -65,6 +69,7 @@ O padding se comporta de forma diferente. Enquanto o margin comprime ambos os el
 </div>
 ```
 Veja:
+
 ![display-flex](/assets/images/css/display-flex/5.png)
 
 A largura da div a esquerda (vermelha) é somada com o padding da direita de 20%, que passa a ter 70% (na prática) de largura e a div a direita (azul) passa a ter apenas 30% de largura (na prática).
