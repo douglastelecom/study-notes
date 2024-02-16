@@ -74,3 +74,9 @@ Veja:
 
 A largura da div a esquerda (vermelha) é somada com o padding da direita de 20%, que passa a ter 70% (na prática) de largura e a div a direita (azul) passa a ter apenas 30% de largura (na prática).
 </div>
+
+#### CONCLUSÃO
+
+O margin normalmente não altera o tamanho do seu elemento, mas se não houver espaço disponível, ele irá comprimir todos os elementos da fileira para atingir a margem que foi estabelecida.
+
+O padding sempre aumenta o tamanho da sua div, e se não houver espaço disponível, ele irá comprimir todos os OUTROS (perceba a diferença com o margin, que comprime também o próprio) elementos da fileira.
