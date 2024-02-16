@@ -12,19 +12,19 @@ Define como o bloco de um componente será renderizado na tela.
 
 Observe a figura abaixo.
 
-![html-display](/assets/images/position-and-display/position-and-display-1.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-1.webp)
 
 Perceba que os links renderizaram lado a lado.
 
-![html-display](/assets/images/position-and-display/position-and-display-2.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-2.webp)
 
 Por que isso acontece? Porque as tags `<a>` são definidas com o estilo `display: inline` por padrão. Elas renderizam uma ao lado da outra.
 
 Se quisermos uma acima da outra, em coluna, precisamos mudar o display para `display: block`. Veja:
 
-![html-display](/assets/images/position-and-display/position-and-display-3.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-3.webp)
 
-![html-display](/assets/images/position-and-display/position-and-display-4.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-4.webp)
 
 - **Display Block:** Renderiza os elementos um abaixo do outro.
 
@@ -43,7 +43,7 @@ Se quisermos uma acima da outra, em coluna, precisamos mudar o display para `dis
 
 Para esta propriedade precisamos pensar na nossa tela como um plano cartesiano, no qual os pontos e x e y começam no topo esquerdo da tela.
 
-![html-display](/assets/images/position-and-display/position-and-display-5.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-5.webp)
 
 Existem cinco tipos de posições:
 
@@ -52,28 +52,28 @@ Existem cinco tipos de posições:
 - **Relative:** Ao aplicar o tipo relative em um elemento, ele poderá ser manipulado através das propriedades top, bottom, left ou right. Cada um deles possui valores numéricos que determinam em qual coordenada x ou y seu elemento irá se mover.
 Ao contrário do absolute, o relative leva em consideração apenar o posicionamento do seu elemento, desconsiderando a posição do elemento pai.
 
-![html-display](/assets/images/position-and-display/position-and-display-6.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-6.webp)
 
-![html-display](/assets/images/position-and-display/position-and-display-7.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-7.webp)
 
 - **Absolute:** Ao contrário do relative, o absolute leva em consideração a posição do pai do elemento. Veja o exemplo abaixo:
 
-![html-display](/assets/images/position-and-display/position-and-display-8.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-8.webp)
 
-![html-display](/assets/images/position-and-display/position-and-display-9.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-9.webp)
 
-![html-display](/assets/images/position-and-display/position-and-display-10.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-10.webp)
 
 - **Fixed:** Se comporta de forma muito similar ao absolute, mas leva em consideração apenas a posição do elemento window/body. Não o pai do elemento. É um recurso que nos permite criar elementos fixos que independem do scroll da página.
 
-![html-display](/assets/images/position-and-display/position-and-display-11.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-11.webp)
 
-![html-display](/assets/images/position-and-display/position-and-display-12.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-12.webp)
 
-![html-display](/assets/images/position-and-display/position-and-display-13.webp)
+![html-display](/assets/images/css/position-and-display/position-and-display-13.webp)
 
 - **Sticky:** Permite que um elemento hora funcione como relative e outras vezes como fixed. Muito utilizado para menus que são fixos e ao mesmo tempo relativos quando necessário.
 
-![html-display](/assets/images/position-and-display/position-and-display-14.gif)
+![html-display](/assets/images/css/position-and-display/position-and-display-14.gif)
 
 </div>
