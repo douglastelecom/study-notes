@@ -16,7 +16,7 @@ Pseudoclasses e pseudoelements são diferentes. Pseudoclasse se refere à um est
 
 Uma pseudoclasse de estado entá relacionada diretamente as ações do usuário.
 
-- **Link:** representa o estado do link antes de ser clicado
+- **:link** representa o estado do link antes de ser clicado
 
 ```css
 a:link{
@@ -24,7 +24,7 @@ a:link{
 }
 ```
 
-- **Visited:** representa o estado do link após de ser clicado
+- **:visited** representa o estado do link após de ser clicado
 
 ```css
 a:visited{
@@ -32,7 +32,7 @@ a:visited{
 }
 ```
 
-- **Hover:** estiliza qualquer elemento quando o ponteiro está em cima:
+- **:hover** estiliza qualquer elemento quando o ponteiro está em cima:
 
 ```css
 a:hover{
@@ -40,14 +40,14 @@ a:hover{
 }
 ```
 
-- **Active:** funciona sempre que um elemento é "ativado", ou seja no tempo entre o click e o soltar do botão.
+- **:active** funciona sempre que um elemento é "ativado", ou seja no tempo entre o click e o soltar do botão.
 
 ```css
 a:active{
     color:rebeccapurple;
 }
 ```
-- **Focus:** ativa sempre que um dispositivo apontador, como teclado, touchscreen ou mouse o seleciona.
+- **:focus** ativa sempre que um dispositivo apontador, como teclado, touchscreen ou mouse o seleciona.
 ```css
 a:focus{
     color:green;
@@ -60,7 +60,7 @@ input:focus{
 
 ##### ESTRUTURAL
 
-- **First-Child:** seleciona sempre o primeiro elemento de um elemento pai.
+- **:first-child** seleciona sempre o primeiro elemento de um elemento pai.
 
 ```html
 <ul>
@@ -76,7 +76,7 @@ li:first-child {
 }
 ```
 
-- **First of Type:** seleciona sempre o primeiro filho de cada tipo. No exemplo abaixo, tanto a primeira `<li>` quanto o primeiro `<span>` serão laranja.
+- **:first-of-type** seleciona sempre o primeiro filho de cada tipo. No exemplo abaixo, tanto a primeira `<li>` quanto o primeiro `<span>` serão laranja.
 
 ```html
 <ul>
@@ -92,7 +92,7 @@ ul :first-of-type {
 }
 ```
 
-- **Last Child:** representa o último elemento filho do seu elemento pai.
+- **:last-child** representa o último elemento filho do seu elemento pai.
 
 ```html
 <ul>
@@ -107,7 +107,7 @@ li:last-child {
     color: orange;
 }
 ```
-- **Last of Type:** representa o último elemento de cada tipo do seu elemento pai.
+- **:last-of-type** representa o último elemento de cada tipo do seu elemento pai.
 
 ```html
 <ul>
@@ -123,7 +123,7 @@ li:last-of-type {
 }
 ```
 
-- **Not:** pseudoclasse de negação. Aceita um argumento entre parênteses — basicamente outro seletor — e os elementos não serão afetados pela estilização.
+- **:not()** é a pseudoclasse de negação. Aceita um argumento entre parênteses — basicamente outro seletor — e os elementos não serão afetados pela estilização.
 
 ```html
 <ul>
@@ -149,7 +149,7 @@ li:not(.first-item):not(:last-of-type) {
 }
 ```
 
-**Nth Child:** Seleciona um elemento filho específico.
+**:nth-child()** seleciona um elemento filho específico.
 
 ```html
 <ol>
@@ -198,7 +198,7 @@ ol :nth-child(even) {
 }
 ```
 
-**Nth Last Child:** O mesmo que foi feito com nth-child pode ser feito com nth-last-child, mas com a contagem inversa (do último ao primeiro).
+**:nth-last-child()** faz o mesmo que foi feito com nth-child pode ser feito com nth-last-child, mas com a contagem inversa (do último ao primeiro).
 
 ```css
 ol :nth-last-child(2n) {
@@ -206,7 +206,7 @@ ol :nth-last-child(2n) {
 }
 ```
 
-**Nth of Type:** Seleciona o enésimo elemento de um determinado tipo.
+**:nth-of-type()** seleciona o enésimo elemento de um determinado tipo.
 
 ```css
 p:nth-of-type(2) {
@@ -214,7 +214,7 @@ p:nth-of-type(2) {
 }
 ```
 
-**Nth last of type** Seleciona o enésimo elemento de um determinado tipo, porém com a contagem inversa (do último para o primeiro).
+**:nth-last-of-type()** seleciona o enésimo elemento de um determinado tipo, porém com a contagem inversa (do último para o primeiro).
 
 ```css
 p:nth-last-of-type(2) {
@@ -222,7 +222,7 @@ p:nth-last-of-type(2) {
 }
 ```
 
-**Only Child:** tem como alvo o único filho de um elemento pai. Se o elemento pai tiver mais de um filho, nenhum será afetado. Repare abaixo que apenas o `<li>` do primeiro `<ul>` será afetado, pois só ele possui um único filho.
+**:only-child** tem como alvo o único filho de um elemento pai. Se o elemento pai tiver mais de um filho, nenhum será afetado. Repare abaixo que apenas o `<li>` do primeiro `<ul>` será afetado, pois só ele possui um único filho.
 
 ```html
 <ul>
@@ -241,6 +241,103 @@ ul :only-child {
 }
 ```
 
-**Only of type:** semelhante ao `only-child`, porém apenas funciona se o elemento não tiver um irmão do mesmo tipo.
+**:only-of-type** é semelhante ao `only-child`, porém apenas funciona se o elemento não tiver um irmão do mesmo tipo.
+
+**:target** é ativado em um determinado elemento com id e path da url iguais. 
+
+URL: https://awesomebook.com/#target
+
+```html
+<article id="target">
+    <h1><code>:target</code> pseudo-class</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+</article>
+```
+
+```css
+:target {
+    background: yellow;
+}
+```
+
+##### VALIDAÇÃO
+
+Pseudoclasses que funcionam bem com formulários, mas que também podem ser usadas com outros tipos de elementos html.
+
+**:checked**
+
+Ativa quando um determinado checkbox ou um determinado radio button foi selecionado.
+
+```css
+:checked + label {
+    background: $g;
+    transition: .3s;
+}
+```
+
+**:default** também bastante utilizado em radiobuttons e checkboxs. É utilizado para os valores default do radiobutton ou do checkboxe. Por exemplo, no radiobutton abaixo, o css será aplicado apenas na season de id summer, que tem o atributo "checked" (que o torna o default):
+
+```html
+<fieldset>
+  <legend>Favorite season</legend>
+
+  <input type="radio" name="season" id="spring" value="spring" />
+  <label for="spring">Spring</label>
+
+  <input type="radio" name="season" id="summer" value="summer" checked />
+  <label for="summer">Summer</label>
+
+  <input type="radio" name="season" id="fall" value="fall" />
+  <label for="fall">Fall</label>
+
+  <input type="radio" name="season" id="winter" value="winter" />
+  <label for="winter">Winter</label>
+</fieldset>
+```
+
+```css
+input:default {
+  box-shadow: 0 0 2px 1px coral;
+}
+
+input:default + label {
+  color: coral;
+}
+```
+
+**:disabled** tem como alvo o elemento que está desabilitado.
+
+```html
+<input type="text" id="name" disabled>
+```
+
+```css
+:disabled {
+    opacity: .5;
+}
+```
+
+**:empty** é utilizado para elementos que estão vazios, como um input que não possui um único character digitado ou uma div que não possui nenhuma escrita.
+
+```html
+<div>This box is orange</div>
+<div> </div>
+<div></div>
+<div><!-- This comment is not considered content --></div>
+```
+
+```css
+div {
+  background: orange;
+  height: 30px;
+  width: 200px;
+}
+
+div:empty {
+  background: yellow;
+}
+```
+
+**:enabled** é o inverso do `:disabled`. Por padrão, todos os elementos são habilitados.
 
 </div>

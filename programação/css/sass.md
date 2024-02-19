@@ -143,6 +143,8 @@ Em css isso resultaria em:
 }
 ```
 
+Os mixins nada mais são do que um tipo especial de funções css que recebem parâmetros e retornam código css. Não confundir com as funções normais do css que retornam números ou strings.
+
 #### ESTENDER (EXTEND) E HERANÇA (INHERITANCE)
 
 Você pode herdar um conjunto de propriedades sass da seguinte forma:
