@@ -514,4 +514,61 @@ h1:fullscreen {
 ```
 
 #### PSEUDOELEMENTOS
+
+Elementos que não estão representados no DOM, pois não os digitamos em html, mas os criamos no CSS. Os pseudoelementos são usados para adicionar estilos a partes específicas do conteúdo de um elemento, como o primeiro caractere de um parágrafo.
+
+**::before** adiciona outro elemento html antes do elemento. O conteúdo não está na DOM, mas pode ser manipulado como se estivesse. E a propriedade `content` precisa ser declarada no css. É possível também inserir uma tag <span> em content.
+
+```html
+<h1>Ricardo</h1>
+```
+
+```css
+h1:before {
+    content: "Hello "; /* Note the space after the word Hello. */
+}
+```
+
+Será renderizado como: Hello Ricardo!
+
+**::after** faz o mesmo que before, porém depois.
+
+**::backdrop (experimental)** é uma caixa gerada atrás do elemento de tela inteira, mas que fica acima de todos os outros conteúdos.
+**::first-letter** seleciona a primeira letra de uma linha de texto.
+
+```css
+h1:first-letter  {
+    font-size: 5em;
+}
+```
+
+**::first-line** é muito parecido com first-letter, mas em vez da primeira letra, seleciona a primeira linha.
+
+```css
+p:first-line {
+    background: orange;
+}
+```
+
+**::select** altera a aparência do texto selecionado.
+
+```css
+::selection  {
+    color: orange;
+    background: #333;
+}
+```
+
+**::placeholder** tem como alvo o texto de placeholder em um input.
+
+```html
+<input type="email" placeholder="name@domain.com">
+```
+
+```css
+input::placeholder {
+    color:#666;
+}
+```
+
 </div>
