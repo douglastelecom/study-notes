@@ -8,7 +8,7 @@
 
 #### SIMBOLOGIA
 
-Pseudoclasses e pseudoelements são diferentes. Pseudoclasse se refere à um estado, enquanto o pseudolemento se refere a algum elemento acessório do elemento principal (que poderá ser tratado como um elemento html). As pseudoclasses são representadas com `:`, por exemplo `div:hover{}`, e os pseudoelementso são representados com `::`, por exemplo `div::after{}`.
+Pseudoclasses e pseudoelements são diferentes. Pseudoclasse se refere à um estado, enquanto o pseudolemento se refere a algum elemento acessório do elemento principal (que poderá ser tratado como um elemento html). As pseudoclasses são representadas com `:`, por exemplo `div:hover{}`, e os pseudoelementos são representados com `::`, por exemplo `div::after{}`.
 
 #### PSEUDOCLASSES
 
@@ -340,4 +340,178 @@ div:empty {
 
 **:enabled** é o inverso do `:disabled`. Por padrão, todos os elementos são habilitados.
 
+**:in-range** tem como alvo elementos que possuem um intervalo. Veja o exemplo abaixo, o estilo css será ativado apenas quando o tamanho do input estiver dentro de 5 e 10.
+
+```html
+<input type="number" min="5" max="10">
+```
+
+```css
+input[type=number] {
+    border: 5px solid orange;
+}
+
+input[type=number]:in-range {
+    border: 5px solid green;
+}
+```
+
+**:out-of-range** é muito semelhante ao `:in-range`, mas funciona de forma inversa.
+
+**:indeterminate** é ativado em checkboxs ou radiobuttons. Por exemplo, quando nenhum botão de um radiobutton é selecionado, ele fica no estado de indeterminação.
+
+```html
+<ul>
+    <li>
+        <input type="radio" name="list" id="option1">
+        <label for="option1">Option 1</label>
+    </li>
+    <li>
+        <input type="radio" name="list" id="option2">
+        <label for="option2">Option 2</label>
+    </li>
+    <li>
+        <input type="radio" name="list" id="option3">
+        <label for="option3">Option 3</label>
+    </li>
+</ul>
+```
+
+```css
+:indeterminate + label {
+    background: orange;
+}
+```
+
+**:valid** tem como alvo elementos cuja formatação está correta de acordo com o formato exigido.
+
+```css
+input[type=email]:valid {
+    border: 1px solid green;
+}
+```
+
+**:invalid** é o inverso de `:valid`.
+
+**:optional** tem como alvo campos de entrada que não são obrigatórios. Em outras palavras, que não possuam `required`.
+
+```html
+<input type="number">
+```
+
+```css
+:optional {
+    color: gray;
+}
+```
+
+**:read-only** ativado apenas quando o elemento possui o atributo `readonly`.
+
+```html
+<input type="text" value="I am read only" readonly>
+```
+
+```css
+input:read-only {
+    color: gray;
+}
+```
+
+**:read-write** tem como alvo os elementos que podem ser editados pelo usuário. Também pode ser ativado em elementos que possuem o atributo `contenteditable`. O exemplo a seguir combina o `:read-write` com o `focus`.
+
+```html
+<div class="editable" contenteditable>
+    <h1>Click on this text to edit it</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+</div>
+```
+
+```css
+:read-write:focus {
+    padding: 5px;
+    border: 1px dotted black;
+}
+```
+
+**:required** é semelhante ao `read-only`, porém funciona de forma inversa. Só ativa em elementos com o atributo `required`
+
+**:scope (experimental)** só faz sentido quando vinculado ao atributo `scoped` em uma tag `style` dentro de um arquivo html. No exemplo abaixo, apenas o segundo `section` ficará em itálico.
+
+```html
+<article>
+    <section>
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </section>
+    <section>
+        <style scoped>
+                        :scope {
+                            font-style: italic;
+                        }
+                  </style>
+        <h1>This text will be italicized</h1>
+        <p>This text will be italicized.</p>
+    </section>
+</article>
+```
+
+**:dir (experimental)** basicamente seleciona as tagas que funcionam da esquerda para a direita, ou da direita para a esquerda. O exemplo abaixo está escrito em árabe, cuja leitura se dá da direita para a esquerda.
+
+```html
+<article dir="rtl">
+    <p>التدليك واحد من أقدم العلوم الصحية التي عرفها الانسان والذي يتم استخدامه لأغراض الشفاء منذ ولاده الطفل.</p>
+</article>
+```
+```css
+/* unprefixed */
+article :dir(rtl) {
+    color: orange;
+}
+```
+**:lang** corresponde à linguagem do idioma.
+
+```html
+<article lang="en">
+    <q>Lorem ipsum dolor sit amet.</q>
+</article>
+<article lang="fr">
+    <q>Lorem ipsum dolor sit amet.</q>
+</article>
+<article lang="de">
+    <q>Lorem ipsum dolor sit amet.</q>
+</article>
+```
+
+```css
+:lang(en) q { quotes: '“' '”'; }
+:lang(fr) q { quotes: '«' '»'; }
+:lang(de) q { quotes: '»' '«'; }
+```
+
+##### DIVERSOS
+
+Vamos agora ver pseudoclassses com outras funcionalidades.
+
+**:root** refere-se ao elemento mais alto em um documento. Geralmente o elemento `html`.
+
+```css
+:root {
+    background: orange;
+}
+```
+
+**:fullscreen (experimental)** tem como alvo elementos exibidos em fullscreen. Porém, não funciona quando o usuário pressiona f11, mas em APIs JavaScript Fullscreen, voltadas para imagens, vídeos e jogos executados em um contêiner pai.
+
+```html
+<h1 id="element">This heading will have a solid background color in full-screen mode.</h1>
+<button onclick="var el = document.getElementById('element'); el.webkitRequestFullscreen();">Trigger full screen!</button>
+```
+
+```css
+h1:fullscreen {
+    background: orange;
+}
+```
+
+#### PSEUDOELEMENTOS
 </div>
