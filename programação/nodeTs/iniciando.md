@@ -35,7 +35,32 @@ Digitar na prompt:
 npm install --save-dev typescript @types/express @types/node @types/pg drizzle-kit tsup tsx @faker-js/faker
 ```
 
+Para instalar o arquivo de configuração do typescript digite na prompt:
+
+```
+tsc --init
+``` 
 Essas são dependências que só importam na hora de desenvolver, irrelevantes para a execução do programa.
+
+Exemplo de arquivo tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "target": "es2016",                                 
+    "module": "commonjs",                               
+    "baseUrl": "src",                                 
+    "sourceMap": true,                              
+    "outDir": "dist",                                  
+    "esModuleInterop": true,                            
+    "forceConsistentCasingInFileNames": true,        
+    "strict": true,                                  
+    "noImplicitAny": true,                           
+    "skipLibCheck": true                                
+  },
+  "include": ["src/**/*"]
+}
+```
 
 #### Passo 4: Alterando o arquivo package.json
 
