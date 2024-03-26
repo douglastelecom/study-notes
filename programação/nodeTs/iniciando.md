@@ -19,7 +19,7 @@ Pronto, um arquivo `package.json` foi criando. Este arquivo contém todas as dep
 
 Digitar na prompt:
 ```
-npm install --save express pg drizzle-orm
+npm install --save express pg drizzle-orm rimraf
 ```
 
 Express é um microframework web feito para criar APIs REST. pg e drizzle-orm são bibliotecas utilizadas para manipulação de entidades no postgres.
@@ -70,7 +70,47 @@ Dentro do arquivo package.json, na parte de scripts, inserir:
 "scripts":{
     "start": "tsx src/index.ts",
     "start:dev": "tsx --watch src/index.ts",
-    "build": "tsup src/index.ts --format cjs,esm --dts --minify"
+    "build": "rimraf dist && tsup src/index.ts --format cjs,esm --dts --minify"
+}
+```
+
+Exemplo de package.json
+```json
+{
+  "name": "node-express",
+  "version": "1.0.0",
+  "description": "A RESTful API for managing todo lists, built with Express, TypeScript and PostgreSQL",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "start:dev": "tsx --watch src/index.ts",
+    "build": "rimraf dist && tsup src/index.ts --format cjs,esm --dts --minify"
+  },
+  "keywords":[
+    "express",
+    "typescript",
+    "postgres",
+    "drizzle",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "drizzle-orm": "^0.30.4",
+    "express": "^4.19.2",
+    "pg": "^8.11.3",
+    "rimraf": "^5.0.5"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.30",
+    "@types/pg": "^8.11.4",
+    "drizzle-kit": "^0.20.14",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3"
+  }
 }
 ```
 
