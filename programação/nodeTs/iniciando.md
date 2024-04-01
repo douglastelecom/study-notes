@@ -19,7 +19,7 @@ Pronto, um arquivo `package.json` foi criando. Este arquivo contém todas as dep
 
 Digitar na prompt:
 ```
-npm install --save express pg drizzle-orm rimraf
+npm install --save express pg drizzle-orm rimraf dotenv
 ```
 
 Express é um microframework web feito para criar APIs REST. pg e drizzle-orm são bibliotecas utilizadas para manipulação de entidades no postgres.
