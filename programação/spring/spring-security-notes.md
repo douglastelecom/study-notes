@@ -28,9 +28,45 @@ Criar um service `AuthorizationService` que implementa o `UserDetailsService` e 
 
 Criar uma classe chamada `securityConfigurations` e utilizar as notações `@Configuration` e `@EnableWebSecurity`.
 
-Imeplementar o método SecurityFilterChain() e configurar o spring security.
+Criar um bean `SecurityFilterChain()` com @bean e configurar o spring security.
 
 #### Controle de autenticação
+
+No método `SecurityFilterChain()` criado anteriormente, deve-se definir os paths que precisarão de autenticação.
+
+#### Endpoint de autenticação
+
+Criar uma classe `AuthenticationController`
+
+Criar uma entidade `AuthenticationDTO`, contendo login e senha.
+
+Criar um método `login()` no `AuthenticationController`. O método `login()` recebe o login e o password.
+
+Criar um novo bean `AuthenticationManager` dentro da classe `SecurityConfigurations` que será responsável pela autenticação do usuário.
+
+#### Criar um hash da senha
+
+Ainda na classe `SecurityConfigurations` é necessário criar um bean chamado `PasswordEncoder()` que será responsável por criptografar a senha do usuário.
+
+#### Registrar novos usuários
+
+Criar um método register dentro de `AuthenticatioinController`
+
+#### JWT
+
+Instalar a dependência do JWT para java.
+
+Criar uma classe TokenService e após isso atribuir o método `generateToken()`, `genExpirationDate()` e `validateToken()`
+
+#### Alterando as configurações de segurança
+
+No método `securityFilterChain()`, da classe `SecurityConfigurations`, adicionar um filtro que verifica a autorização e a role do usuário.
+
+Criar a classe `SecurityFilter` que extende a classe `OncePerRequestFilter`
+
+#### Retornando token para o usuário
+
+Em `AuthenticationController` importar o `TokenService` e adicionar no método `login()` um retorno do token para a requisição.
 
 
 
