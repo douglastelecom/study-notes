@@ -28,3 +28,29 @@ public class TenantContext {
     }
 }
 ```
+
+A classe `TenantFilter` é o filtro que irá resgatar o tenant de dentro do cabeçalho da requisição. É necessário definir no frontend um cabeçalho denominado "X-TenantID" para cada requisição.
+
+```java
+@Component
+@Order(1)
+class TenantFilter implements Filter {
+
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response,
+      FilterChain chain) throws IOException, ServletException {
+
+        HttpServletRequest req = (HttpServletRequest) request;
+        String tenantName = req.getHeader("X-TenantID");
+        TenantContext.setCurrentTenant(tenantName);
+
+        try {
+            chain.doFilter(request, response);
+        } finally {
+            TenantContext.setCurrentTenant("");
+        }
+    }
+}
+```
+
+
