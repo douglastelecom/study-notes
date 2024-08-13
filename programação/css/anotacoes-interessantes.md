@@ -75,6 +75,10 @@ Veja:
 A largura da div a esquerda (vermelha) é somada com o padding da direita de 20%, que passa a ter 70% (na prática) de largura e a div a direita (azul) passa a ter apenas 30% de largura (na prática).
 </div>
 
+#### VW, % E REM
+
+VW e % são bem parecidos, porém VW é a largura do browser, enquanto % se refere ao tamanho da div pai. REM diz respeito apenas ao tamanho padrão da fonte, sendo bastante utilizado em padding e margin.
+
 #### CONCLUSÃO
 
 O margin normalmente não altera o tamanho do seu elemento, mas se não houver espaço disponível, ele irá comprimir todos os elementos da fileira para atingir a margem que foi estabelecida.
