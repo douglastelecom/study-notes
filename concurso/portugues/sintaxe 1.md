@@ -65,6 +65,58 @@ Mais exemplos:
 >Sou contrário **ao regulamento** (Complementa o adjetivo contrário)
 >Moramos perto **da empresa** (Completa o sentido do advérbio perto)
 
+#### ADJUNTO ADNOMINAL
 
+Adjuntos são termos acessórios que "enfeitam" as orações. O Adjunto adnominal é o acessório que está ligado a um substantivo.
+
+Exemplo:
+
+>**O** vendendor caio na escada **velha**
+
+Perceba que as palavras "O" e "velha" não são fundamentais para remover o sentido da oração. "Vendedor caiu na escada" é suficiente para entendermos seu significado.
+
+#### ADJUNTO ADVERBIAL
+
+É o termo acessório que está ligado a um verbo, adjetivo ou advérbio.
+
+>O homem **rapidamente** comprou um livro (adjunto adverbial ligado ao verbo comprar)
+>O homem comprou um livro **para estudar** (adjunto adverbial ligado ao verbo comprar)
+>O homem comprou um livro **com a mulher** (adjunto adverbial ligado ao verbo comprar)
+
+#### COMPLEMENTO NOMINAL VS ADJUNTO ADNOMINAL
+
+É muito comum confundirmos adjunto adnominal com complemento nominal. A regra para diferenciar os dois é que o adjunto apenas enfeita o substantivo concreto ou abstrato, enquanto o complemento nominal é fundamental para o sentido do substantivo abstrato (sempre abstrato).
+
+Exemplo:
+>Vendemos cadeiras **de madeira**
+
+Cadeira é um substantivo concreto, pois substantivos concretos são aqueles que existem fisicamente ou de forma imaginária. Além disso, se removermos a expressão "de madeira", o sentido da oração não é perdido. Conclui-se que "de madeira" é um adjunto adnominal.
+
+Exemplo:
+>Temos certeza **da vitória**
+
+Certeza é um substantivo abstrato. Ele depende de outro substantivo para existir, como "vitória". O sentido da frase seria perdido sem "da vitória", por tanto, "da vitória" é um complemento nominal.
+
+Além dessas duas diferenças, a primeira o sentido da frase e a segunda o tipo do substantivo, há uma terceira. O complemento nominal é passivo, enquanto o adjunto adnominal é ativo.
+
+Exemplo: 
+>A invenção **do avião** supreendeu o mundo inteiro.
+
+Sabemos que o avião foi inventado (recebeu a ação, passivo). O avião não inventou nada, mas foi inventado. Então, "do avião", é um complemento nominal.
+
+Exemplo:
+>A invenção **de Santos Dumont** surpreendeu o mundo inteiro. 
+
+Santos Dumont inventou (realizou a ação) a invenção, logo é um adjunto adnominal.
+
+Exemplo:
+>A organização **dos relatórios** é importante.
+
+Os relatórios são organizados ou eles fazem a organização? Resposta: eles são organizados. Logo, como sofrem a ação, trata-se de um complemento nominal.
+
+Exemplo:
+>Maria tem amor **de mãe**.
+
+Quem ama? A mãe ama ou ela é amada? Resposta: a mãe ama. Logo, é um adjunto adnominal.
 
 </div>
