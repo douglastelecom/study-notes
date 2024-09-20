@@ -4,7 +4,7 @@
 
 >[Link](https://)
 >
->data
+>16 Setembro de 2024
 
 O estudo da sintaxe 1 envolve Sujeito, Vozes Verbais, Objeto e Transitividade Verbal, Complemento Nominal, Adjunto adnominal, Adjunto adverbial, Predicativo, Aposto e Votativo, e Predicado.
 
