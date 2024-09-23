@@ -1,12 +1,12 @@
 <div align='justify'>
 
-## SINTAXE
+## SINTAXE I
 
->[Link](https://)
+>[nova gramatica](http://www.novagramaticaonline.com/)
 >
 >16 Setembro de 2024
 
-O estudo da sintaxe 1 envolve Sujeito, Vozes Verbais, Objeto e Transitividade Verbal, Complemento Nominal, Adjunto adnominal, Adjunto adverbial, Predicativo, Aposto e Votativo, e Predicado.
+O estudo da sintaxe 1 envolve Sujeito, Vozes Verbais, Objeto e Transitividade Verbal, Complemento Nominal, Adjunto adnominal, Adjunto adverbial, Predicativo, Aposto, Vocativo, e Predicado.
 
 No entanto, abordarei aqui apenas os tópicos que tenho mais dificuldade.
 
@@ -118,5 +118,71 @@ Exemplo:
 >Maria tem amor **de mãe**.
 
 Quem ama? A mãe ama ou ela é amada? Resposta: a mãe ama. Logo, é um adjunto adnominal.
+
+#### PREDICATIVO
+
+Antes de entendermos o que é predicativo, é necessário compreender o que é um verbo de ligação. Um verbo de ligação é um verbo que não expressa ação, mas sim um estado (uma caraterística) ou então uma mudança de estado. Exemplo: ser, estar, continuar, permanecer.
+
+Exemplo:
+>Eu **sou** bonito.
+
+"Ser bonito" não é uma ação, mas sim é um estado. Por tanto, o verbo "ser" é um verbo de ligação.
+
+Exemplo:
+>"Sandra **continua** casada".
+
+A palavra "continua" também expressa um estado, o estado de cansaço, não uma ação. Por isso, o verbo continuar também é um verbo de ligação.
+
+O predicativo nada mais é que o complemento do verbo de ligação.
+
+Exemplo
+>Eu sou **bonito**
+
+Bonito completa o sentido do verbo de ligação ser, por isso é um predicativo. Perceba que os predicativos são semelhantes aos objetos.
+
+#### APOSTO
+
+O aposto é o termo que explica ou esclarece o sentido de algum termo. Normalmente aparece entre vírgulas ou dois pontos, mas também pode aparecer sem vírgulas: aposto específico.
+
+>Porto Alegre, **capital do Rio Grande do Sul**, fica às margens do rio Guaíba.
+>Ele foi à papelaria e comprou: **lápis, borracha e papel** (aposto enumerativo, tudo o que vem após dois pontos é para explicar, logo é aposto).
+>Ele só queria saber de uma coisa: **férias**.
+
+Exemplo de aposto sem vírgula:
+
+>A cidade **do Rio de Janeiro** é boa.
+
+#### VOCATIVO
+
+É o termo que indica chamamento.
+
+Exemplo:
+
+>**João**, sente-se aqui.
+
+#### PREDICADO
+
+É o que sobra da oração removendo o sujeito.
+
+>Eu **comprei livros**.
+
+Existem três tipos: predicado verbal, nominal e verbo-nominal.
+
+O verbal é aquele onde o verbo expressa uma ação, sendo sempre um verbo transitivo, e nunca um verbo de ligação.
+
+>João **viajou para Paris**. (Predicado verbal)
+
+O predicado nominal é quando o verbo é de ligação e não expressa uma ação, mas um estado ou característica.
+
+Como o verbo não é transitivo, a oração não possui objeto e, por isso, o predicativo sempre será do sujeito, e nunca do objeto.
+
+>João está **cansado** (Predicativo do sujeito)
+
+O verbo-nominal acontece quando a oração expressa ação e estado ao mesmo tempo. Então o verbo é transitivo e a oração possui um predicativo (dessa vez podendo ser do sujeito ou do objeto).
+
+>João **chegou cansado** (Observe que o verbo chegar expressa tanto uma ação, que é o fato de joão ter chegado, quato um estado, que é ele estar cansado. Cansado é um predicativo do sujeito).
+
+>Eu considero o livro interessante. (Aqui o sujeito expressa uma ação, considerar, e o predicado expressa uma característica do objeto, interessante. Logo é um predicado verbo-nominal).
+
 
 </div>
