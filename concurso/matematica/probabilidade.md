@@ -26,4 +26,31 @@ A fórmula abaixo mostra a chance de fazer um flush no Poker (ter cinco cartas d
 
 \[ \frac{7!}{5!(2!)}(0.25^5*0.75^2)\]
 
+\( \frac{7!}{5!(2!)}\) é o tanto de combinações possíveis com as cartas de sucesso e fracasso, considerando que as cartas de sucesso são um elemetno indistinguível das outras cartas de sucesso, e as cartas de fracasso como elementos indistinguíveis das outras cartas de fracasso. 
+Por exemplo, é como se nas 7! (5040) combinações apenas 21 delas seriam realmente diferentes, enquanto o restante das 5019 combinações seriam apenas alguma combinação repetida dentre as 21.
+
+As 21 combinações possíveis entre sucesso e fracasso seriam:
+
+SSSSSFF
+SSSSFSF
+SSSSFFS
+SSSSFSS
+SSSFSFS
+SSSFFSS
+SSFSSSF
+SSFSSFS
+SSFSFSS
+SSFFSSS
+SFSSSSF
+SFSSSFS
+SFSSFSS
+SFSFSSS
+SFFSSSS
+FSSSSSF
+FSSSSFS
+FSSSFSS
+FSSFSSS
+FSFSSSS
+FFSSSSS
+
 </div>
