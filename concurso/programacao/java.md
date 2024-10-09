@@ -20,5 +20,11 @@ Java EE foi uma plataforma para desenvolvimento de aplicações corporativas Jav
 
 O Jakarta EE é a continuação do projeto Java EE, que foi doado pela Oracle para a Eclipse Foundation. A mudança de nome ocorreu devido a restrições de marca registrada com o uso do nome "Java".
 
+#### DIFERENÇA ENTRE JSP E JSF
 
+O JSP é uma tecnologia simples voltada para a renderização dinâmica de HTML através de tags especiais como ``<% %>``. A extensão dos arquivos html é jsp, como "index.jsp".
+
+O JSF, ao contrário do JSP que é basicamente uma camada de exibição, é um framework completo que abstrai a criação de interfaces web e facilita a construção de componentes reutilizáveis (botões, tabelas, formulários) etc. Segue um padrão de component-based development (desenvolvimento baseado em componentes) e facilita a separação entre a lógica de apresentação e a lógica de negócios.
+
+JSF é orientado a componentes, ou seja, ele permite que você crie interfaces utilizando componentes prontos, como campos de entrada, formulários e tabelas, que podem ser gerenciados pelo ciclo de vida do JSF. Utiliza páginas XHTML.
 </div>
