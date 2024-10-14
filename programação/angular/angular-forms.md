@@ -89,7 +89,7 @@ this.fg.patchValue({
 
 Para tornar a construção de formulários menos repetitiva, e sem precisar instanciar novos formcontrols o tempo todo, o angular fornece o formBuilder, um serviço que acelera a construção de formulários reativos. 
 
-Ele possui três apenas serviço: `control()` `group()` e `array()`.
+Ele possui apenas três métodos: `control()` `group()` e `array()`.
 
 Como o FormBuilder é um serviço, é necessário importá-lo no construtor para ser injetado:
 ```ts
