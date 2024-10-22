@@ -71,7 +71,7 @@ Adjuntos são termos acessórios que "enfeitam" as orações. O Adjunto adnomina
 
 Exemplo:
 
->**O** vendendor caio na escada **velha**
+>**O** vendendor caiu na escada **velha**
 
 Perceba que as palavras "O" e "velha" não são fundamentais para remover o sentido da oração. "Vendedor caiu na escada" é suficiente para entendermos seu significado.
 
