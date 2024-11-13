@@ -16,3 +16,10 @@ No Scrum, o trabalho é concluído em ciclos curtos, chamados sprints, e a equip
 
 Normalmente as equipes são pequenas, entre 3 a 9 desenvolvedores.
 
+
+#### KANBAN
+
+To do -> in progress -> done
+
+Abordagem visual de fluxo de trabalho que busca melhor eficiência e otimizar o fluxo contínuo.
+Junto com o scrum, forma o scrumban.
