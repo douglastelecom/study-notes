@@ -23,3 +23,23 @@ To do -> in progress -> done
 
 Abordagem visual de fluxo de trabalho que busca melhor eficiência e otimizar o fluxo contínuo.
 Junto com o scrum, forma o scrumban.
+
+#### XP
+
+Outra metodologia ágil é o extreme programming (XP). Ela exige que todas as partes do produto (códigos) sejam testadas, e que o código seja fácil e simples de ser compreendido.
+
+#### Lean
+
+A metodologia Lean possui cinco princípios que visam melhorar o desempenho de projetos:
+
+Definir valor: Identificar o que o cliente valoriza e garantir que esse valor esteja incluído no processo.
+
+Mapear o fluxo de valor: Visualizar o processo completo, incluindo cada etapa que contribui para o valor ao cliente, e eliminar atividades desnecessárias.
+
+Criar fluxo: Assegurar que o produto se mova eficientemente pelo processo, eliminando desperdícios, atrasos e obstáculos.
+
+Estabelecer atração: Facilitar o acesso do cliente ao produto ou a recursos incrementais, simplificando o processo para que o cliente possa usar o produto conforme necessário.
+
+Buscar a perfeição: Melhorar continuamente as etapas anteriores, promovendo aprimoramento constante.
+
+
