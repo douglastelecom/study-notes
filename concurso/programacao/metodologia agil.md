@@ -30,6 +30,8 @@ Outra metodologia ágil é o extreme programming (XP). Ela exige que todas as pa
 
 #### Lean
 
+O agil surgiu do Lean. O Lean vem antes do manifesto ágil.
+
 A metodologia Lean possui cinco princípios que visam melhorar o desempenho de projetos:
 
 Definir valor: Identificar o que o cliente valoriza e garantir que esse valor esteja incluído no processo.
