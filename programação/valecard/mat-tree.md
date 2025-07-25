@@ -136,12 +136,39 @@ Em seguida ele cria uns dados de exemplo, que são nada mais que uma lista de n�
 ```
 
 Depois ele define o `treeControl`, basicamente informando que as informações de level do nó e se ele se expande ou não (se é pai ou não) podem ser encontradas no próprio atributo do objeto.
-
+O treeControl será passado no html da árvore como um dos parâmetros que regem seu comportamento (quanto a level e expansão).
 ```ts
   treeControl = new FlatTreeControl<FlatNode>(
     node => node.level,
     node => node.expandable
   );
 ```
+
+O `MatTreeFlatDataSource` é a classe responsável por criar os nós.
+
+```ts
+  treeFlattener = new MatTreeFlattener<FoodNode, FlatNode>(
+    (node: FoodNode, level: number): FlatNode => ({
+      name: node.name,
+      level,
+      expandable: !!node.children && node.children.length > 0
+    }),
+    node => node.level,
+    node => node.expandable,
+    node => node.children
+  );
+```
+
+Por fim, criar o datasource que irá herdar das duas variáveis definitas anteriormente e atribuir a ela o valor dos dados.
+```ts
+dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+  constructor() {
+    this.dataSource.data = this.TREE_DATA;
+  }
+```
+
+
+
+
 
 </div>
