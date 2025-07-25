@@ -144,7 +144,7 @@ O treeControl será passado no html da árvore como um dos parâmetros que regem
   );
 ```
 
-O `MatTreeFlatDataSource` é a classe responsável por criar os nós.
+O `MatTreeFlatDataSource` é a classe responsável por criar os nós. Ele transforma a lista de FoodNode[] em uma lista de FlatNode[].
 
 ```ts
   treeFlattener = new MatTreeFlattener<FoodNode, FlatNode>(
