@@ -11,13 +11,15 @@
 O mat-tree é pode ser construido no formato de flat tree ou nested tree. Flat-tree significa que no HTML os nós não ficam uns dentro dos outros, enquanto no nested tree os nós filhos precisam ficar dentro dos nós pais no HTML.
 
 Flat tree:
+```html
 <mat-tree>
   <mat-tree-node> parent node </mat-tree-node>
   <mat-tree-node> -- child node1 </mat-tree-node>
   <mat-tree-node> -- child node2 </mat-tree-node>
 </mat-tree>
-
+```
 Nested tree:
+```html
 <mat-tree>
    <mat-nested-tree-node>
      parent node
@@ -25,6 +27,78 @@ Nested tree:
      <mat-nested-tree-node> -- child node2 </mat-nested-tree-node>
    </mat-nested-tree-node>
 </mat-tree>
+```
+## Analisando o exemplo do chatgpt
+
+```ts
+import { Component } from '@angular/core';
+import { FlatTreeControl } from '@angular/cdk/tree';
+import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
+
+interface FoodNode {
+  name: string;
+  children?: FoodNode[];
+}
+
+interface FlatNode {
+  name: string;
+  level: number;
+  expandable: boolean;
+}
+
+@Component({
+  selector: 'tree-basic',
+  templateUrl: 'tree-basic.component.html',
+  styleUrls: ['tree-basic.component.css']
+})
+export class TreeBasicComponent {
+  private TREE_DATA: FoodNode[] = [
+    {
+      name: 'Fruits',
+      children: [
+        { name: 'Apple' },
+        { name: 'Banana' }
+      ]
+    },
+    {
+      name: 'Vegetables',
+      children: [
+        { name: 'Tomato' },
+        { name: 'Potato' }
+      ]
+    }
+  ];
+
+  treeControl = new FlatTreeControl<FlatNode>(
+    node => node.level,
+    node => node.expandable
+  );
+
+  treeFlattener = new MatTreeFlattener<FoodNode, FlatNode>(
+    (node: FoodNode, level: number): FlatNode => ({
+      name: node.name,
+      level,
+      expandable: !!node.children && node.children.length > 0
+    }),
+    node => node.level,
+    node => node.expandable,
+    node => node.children
+  );
+
+  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+
+  constructor() {
+    this.dataSource.data = this.TREE_DATA;
+  }
+
+  hasChild = (_: number, node: FlatNode) => node.expandable;
+}
+```
+
+Primeiro ele cria uma interface para o nó filho:
+
+interface FoodNode {
+}
 
 
 
