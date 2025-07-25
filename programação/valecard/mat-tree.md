@@ -95,11 +95,53 @@ export class TreeBasicComponent {
 }
 ```
 
-Primeiro ele cria uma interface para o nó filho:
+Primeiro ele cria uma interface para o nó pai:
 
+```ts
 interface FoodNode {
+  name: string;
+  children?: FoodNode[];
 }
+```
 
+Depois cria uma interface para o nó filho:
 
+```ts
+interface FlatNode {
+  name: string;
+  level: number;
+  expandable: boolean;
+}
+```
+
+Em seguida ele cria uns dados de exemplo, que são nada mais que uma lista de nós pais com nós filhos:
+
+```ts
+  private TREE_DATA: FoodNode[] = [
+    {
+      name: 'Fruits',
+      children: [
+        { name: 'Apple' },
+        { name: 'Banana' }
+      ]
+    },
+    {
+      name: 'Vegetables',
+      children: [
+        { name: 'Tomato' },
+        { name: 'Potato' }
+      ]
+    }
+  ];
+```
+
+Depois ele define o `treeControl`, basicamente informando que as informações de level do nó e se ele se expande ou não (se é pai ou não) podem ser encontradas no próprio atributo do objeto.
+
+```ts
+  treeControl = new FlatTreeControl<FlatNode>(
+    node => node.level,
+    node => node.expandable
+  );
+```
 
 </div>
