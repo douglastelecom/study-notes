@@ -95,7 +95,7 @@ export class TreeBasicComponent {
 }
 ```
 
-Primeiro ele cria uma interface para o nó pai:
+Primeiro ele cria uma interface para o nó de comida:
 
 ```ts
 interface FoodNode {
@@ -104,7 +104,7 @@ interface FoodNode {
 }
 ```
 
-Depois cria uma interface para o nó filho:
+Depois cria uma interface para o nó da árvore (flat node):
 
 ```ts
 interface FlatNode {
