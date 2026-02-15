@@ -16,7 +16,7 @@ public static final NivelAcessoEnum EDITOR = new NivelAcessoEnum(2, "Editor de C
 public static final NivelAcessoEnum VISITANTE = new NivelAcessoEnum(3, "Apenas Leitura");
 ```
 
-O padrão definido para o enum foi:
+O padrão definido para o enum foi (Observe que essa parte do enum deve sempre vir primeiro):
 
 ```java
 ADM(1, "Administrador"), 
@@ -24,7 +24,7 @@ EDITOR(2, "Editor de Conteúdo"),
 VISITANTE(3, "Apenas Leitura");
 ```
 
-E elas SEMPRE devem vir primeiro.
+Também é importante ressaltar que o construtor do enum não precisa vir com `public` ou `private` antes. Por padrão ele já é private.
 
 Abaixo o exemplo de um código completo de enum.
 
