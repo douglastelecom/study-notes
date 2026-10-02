@@ -131,4 +131,4 @@ As opções derivam do enumerador CascadeType e refletem diretamente as mudança
 
 - CascadeType.ALL: Agrupa todas as operações acima (além de REFRESH e DETACH). É a escolha padrão para relacionamentos de composição forte, onde o filho não faz o menor sentido de existir sem o pai.
 
-Cuidado para não confundir com o oprhanRemoval. A função do orphanRemoval = true: Ele é um atributo exclusivo das anotações @OneToMany e @OneToOne que cobre exatamente essa falha. Se você tirar um filho da lista da entidade pai (quebrando o vínculo em memória), o JPA intercepta isso e emite um DELETE imediato no banco de dados para aquele registro específico, mesmo que a moto continue existindo perfeitamente.
+Cuidado para não confundir com o oprhanRemoval. A função do orphanRemoval = true: Ele é um atributo exclusivo das anotações @OneToMany e @OneToOne que cobre exatamente essa falha. Se você quebrar a relação deum filho com o pai (quebrando o vínculo em memória), o JPA intercepta isso e emite um DELETE imediato no banco de dados para aquele registro específico, mesmo que a moto continue existindo perfeitamente.
