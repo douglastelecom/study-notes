@@ -13,3 +13,5 @@ As bancas adoram cobrar sobre o ciclo de vida das entidades que ele gerencia. Os
 - Managed: O objeto está associado a um EntityManager ativo. Qualquer alteração em seus atributos será automaticamente sincronizada ao banco de dados após o commit ou flush.
 - Detached: Objeto foi gerenciado em algum momento, possui ID e um representante no banco de dados, mas não está mais associado a nenhum EntityManager. Isso acontece quando o EntityManager foi fechado ou o objeto foi explicitamente desvinculado com um detach() ou após um clear(). Alterações feitas aqui não refletem no banco de dados.
 - Removed: O objeto foi marcado para exclusão através do método .remove() do EntityManager. Ele será apagado no próximo commit.
+
+Os ciclos de vida existem porque o EntityManager não é um simples tradutor de SQL. Ele precisa entender o que é que foi alterado no objeto em relação a sua representação no banco de dados além de outras questões de otimização.
